@@ -1,0 +1,143 @@
+doctype
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui")
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name="apple-mobile-web-app-status-bar-style", content="black")
+        title My App
+        // Path to Framework7 Library CSS
+        link(rel="stylesheet", href="css/#{stylesheetFilename}.css")
+        link(rel="stylesheet", href="css/#{stylesheetColorsFilename}.css")
+        // Path to your custom app styles
+        link(rel="stylesheet", href="css/my-app.css")
+    body
+        // Status bar overlay for fullscreen mode
+        .statusbar-overlay
+
+        // Panels overlay
+        .panel-overlay
+        // Left panel with reveal effect
+        .panel.panel-left.panel-reveal
+            .view
+                .pages
+                    .page(data-page='panel-left')
+                        .page-content
+                            .content-block
+                                .list-block
+                                    ul
+                                        li
+                                            a(href="index.html").item-link.close-panel
+                                                .item-content
+                                                    .item-media
+                                                        i.icon.icon-road-accident
+                                                    .item-inner
+                                                        .item-title
+                                                            Попали в ДТП?
+                                        li
+                                            a(href="osago.html").item-link.close-panel
+                                                .item-content
+                                                    .item-media
+                                                        i.icon.icon-osago
+                                                    .item-inner
+                                                        .item-title
+                                                            Осаго
+                                        li
+                                            a(href="mulct.html").item-link.close-panel
+                                                .item-content
+                                                    .item-media
+                                                        i.icon.icon-mulct
+                                                    .item-inner
+                                                        .item-title
+                                                            КБМ и Штрафы
+                            .content-block-title
+                            .content-block
+                                .list-block
+                                    ul
+                                        li
+                                            a(href="about.html").item-link.close-panel
+                                                .item-content
+                                                    .item-inner
+                                                        .item-title
+                                                            О программе
+        // Right panel with cover effect
+        .panel.panel-right.panel-cover
+            .content-block
+                p Right panel content goes here
+
+        // Views
+        .views
+            // Your main view, should have "view-main" class
+            .view.view-main
+                // Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes
+                .pages.navbar-fixed
+                    // Page, data-page contains page name
+                    .page(data-page="index")
+                        // Top Navbar
+                        .navbar
+                            .navbar-inner
+                                // We have home navbar without left link
+                                .left
+                                    // Right link contains only icon - additional "icon-only" class
+                                    a(href="#").link.icon-only.open-panel 
+                                        i.icon.icon-bars
+                                .center.sliding Попали в ДТП?
+                        // Scrollable page content
+                        .page-content
+                            .list-block.media-list
+                                ul
+                                    li
+                                        a(href="tel:+74232488428").item-link.external.item-content
+                                            .item-media
+                                                img(src="img/i-logo.png", width="44")
+                                            .item-inner
+                                                .item-title-row
+                                                    .item-title
+                                                        Вызвать аварийного комиссара
+                                                .item-subtitle
+                                                    Позвонить в городскую службу аварийных комисаров
+                            .content-block-title
+                                Проверка полиса ОСАГО
+                            .list-block
+                                ul 
+                                    li
+                                        a(href="#").item-link.smart-select
+                                            select(name="serial")
+                                                option(value="XXX", selected=true) XXX
+                                                option(value="CCC") CCC
+                                                option(value="EEE") EEE
+                                                option(value="BBB") BBB
+                                            .item-content
+                                                //- .item-media
+                                                //-     i.icon.icon-form-name
+                                                .item-inner
+                                                    .item-title Серия
+                                    li
+                                        .item-content
+                                            //- .item-media
+                                            //-     i.icon.icon-form-name
+                                            .item-inner 
+                                                .item-title.label Номер
+                                                .item-input
+                                                    input(type="text", placeholder="номер")
+                                    li
+                                        .item-content
+                                            .item-media
+                                                img(src="http://dkbm-web.autoins.ru/dkbm-web-1.0/simpleCaptcha.png")
+                                    li
+                                        .item-content
+                                            //- .item-media
+                                            //-     i.icon.icon-form-name
+                                            .item-inner 
+                                                .item-title.label Код с картинки
+                                                .item-input
+                                                    input(type="text", placeholder="код")
+                                    li
+                                        .content-block
+                                            a(href="#").button.button-raised#check-polis
+                                                Проверить
+
+        // Path to Framework7 Library JS
+        script(type="text/javascript", src="js/#{scriptFilename}.js")
+        // Path to your app js
+        script(type="text/javascript", src="js/my-app.js")

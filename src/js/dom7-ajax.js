@@ -264,13 +264,12 @@ $.ajax = function (options) {
 (function () {
     var methods = ('get post getJSON').split(' ');
     function createMethod(method) {
-        $[method] = function (url, data, success, error) {
+        $[method] = function (url, data, success) {
             return $.ajax({
                 url: url,
                 method: method === 'post' ? 'POST' : 'GET',
                 data: typeof data === 'function' ? undefined : data,
                 success: typeof data === 'function' ? data : success,
-                error: typeof data === 'function' ? success : error,
                 dataType: method === 'getJSON' ? 'json' : undefined
             });
         };

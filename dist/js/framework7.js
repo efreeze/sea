@@ -10,7 +10,7 @@
  * 
  * Licensed under MIT
  * 
- * Released on: May 5, 2016
+ * Released on: February 27, 2016
  */
 (function () {
 
@@ -2177,8 +2177,7 @@
                     next(content);
                 }
             },
-            preroute: function(view, options, isBack) {
-                if (isBack) options.isBack = true;
+            preroute: function(view, options) {
                 app.pluginHook('routerPreroute', view, options);
                 if ((app.params.preroute && app.params.preroute(view, options) === false) || (view && view.params.preroute && view.params.preroute(view, options) === false)) {
                     return true;
@@ -2279,6 +2278,7 @@
                 pushState = options.pushState;
         
             if (typeof animatePages === 'undefined') animatePages = view.params.animatePages;
+        
             // Plugin hook
             app.pluginHook('routerLoad', view, options);
         
@@ -3007,7 +3007,7 @@
         
         };
         app.router.back = function (view, options) {
-            if (app.router.preroute(view, options, true)) {
+            if (app.router.preroute(view, options)) {
                 return false;
             }
             options = options || {};
@@ -7807,7 +7807,7 @@
             if (e.type === 'change' && !form.hasClass('ajax-submit-onchange')) return;
             if (e.type === 'submit') e.preventDefault();
             
-            var method = (form.attr('method') || 'GET').toUpperCase();
+            var method = form.attr('method') || 'GET';
             var contentType = form.prop('enctype') || form.attr('enctype');
         
             var url = form.attr('action');
@@ -8206,7 +8206,7 @@
                 '<div class="navbar">' +
                     '<div class="navbar-inner">' +
                         '<div class="left sliding">' +
-                            '<a href="#" class="link ' + (params.type === 'popup' ? 'close-popup' : 'photo-browser-close-link')+ ' {{#unless backLinkText}}icon-only{{/unless}} {{js "this.type === \'page\' ? \'back\' : \'\'"}}">' +
+                            '<a href="#" class="link close-popup photo-browser-close-link {{#unless backLinkText}}icon-only{{/unless}} {{js "this.type === \'page\' ? \'back\' : \'\'"}}">' +
                                 '<i class="icon icon-back {{iconsColorClass}}"></i>' +
                                 '{{#if backLinkText}}<span>{{backLinkText}}</span>{{/if}}' +
                             '</a>' +
@@ -12021,9 +12021,6 @@
                 }
                 return new Dom7(prevEls);
             },
-            siblings: function (selector) {
-                return this.nextAll(selector).add(this.prevAll(selector));
-            },
             parent: function (selector) {
                 var parents = [];
                 for (var i = 0; i < this.length; i++) {
@@ -12110,18 +12107,6 @@
                     }
                 }
                 return dom;
-            },
-            empty: function () {
-                for (var i = 0; i < this.length; i++) {
-                    var el = this[i];
-                    if (el.nodeType === 1) {
-                        for (var j = 0; j < el.childNodes.length; j++) {
-                            if (el.childNodes[j].parentNode) el.childNodes[j].parentNode.removeChild(el.childNodes[j]);
-                        }
-                        el.textContent = '';
-                    }
-                }
-                return this;
             }
         };
         
@@ -12420,13 +12405,12 @@
         (function () {
             var methods = ('get post getJSON').split(' ');
             function createMethod(method) {
-                $[method] = function (url, data, success, error) {
+                $[method] = function (url, data, success) {
                     return $.ajax({
                         url: url,
                         method: method === 'post' ? 'POST' : 'GET',
                         data: typeof data === 'function' ? undefined : data,
                         success: typeof data === 'function' ? data : success,
-                        error: typeof data === 'function' ? success : error,
                         dataType: method === 'getJSON' ? 'json' : undefined
                     });
                 };
