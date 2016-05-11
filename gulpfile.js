@@ -25,9 +25,9 @@
                 scripts: 'build/js/'
             },
             dist: {
-                root: 'dist/',
-                styles: 'dist/css/',
-                scripts: 'dist/js/'
+                root: 'www/',
+                styles: 'www/css/',
+                scripts: 'www/js/'
             },
             source: {
                 root: 'src/',
@@ -321,6 +321,9 @@
 
     gulp.task('build-ios', ['set-ios', 'build']);
     gulp.task('build-material', ['set-material', 'build']);
+
+    gulp.task('dist-ios', ['set-ios', 'dist']);
+    gulp.task('dist-material', ['set-material', 'dist']);
 
     gulp.task('watch-ios', ['set-ios', 'default']);
     gulp.task('watch-material', ['set-material', 'default']);

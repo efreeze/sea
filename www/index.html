@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.material.css">
+    <link rel="stylesheet" href="css/framework7.material.colors.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="view">
+        <div class="pages">
+          <div data-page="panel-left" class="page">
+            <div class="page-content">
+              <div class="content-block">
+                <div class="list-block">
+                  <ul>
+                    <li><a href="index.html" class="item-link close-panel">
+                        <div class="item-content">
+                          <div class="item-media"><i class="icon icon-road-accident"></i></div>
+                          <div class="item-inner">
+                            <div class="item-title">Попали в ДТП?</div>
+                          </div>
+                        </div></a></li>
+                    <li><a href="osago.html" class="item-link close-panel">
+                        <div class="item-content">
+                          <div class="item-media"><i class="icon icon-osago"></i></div>
+                          <div class="item-inner">
+                            <div class="item-title">Осаго</div>
+                          </div>
+                        </div></a></li>
+                    <li><a href="mulct.html" class="item-link close-panel">
+                        <div class="item-content">
+                          <div class="item-media"><i class="icon icon-mulct"></i></div>
+                          <div class="item-inner">
+                            <div class="item-title">КБМ и Штрафы</div>
+                          </div>
+                        </div></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="content-block-title"></div>
+              <div class="content-block">
+                <div class="list-block">
+                  <ul>
+                    <li><a href="about.html" class="item-link close-panel">
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">О программе</div>
+                          </div>
+                        </div></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>Right panel content goes here</p>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page">
+            <!-- Top Navbar-->
+            <div class="navbar">
+              <div class="navbar-inner">
+                <!-- We have home navbar without left link-->
+                <div class="left">
+                  <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+                </div>
+                <div class="center sliding">Попали в ДТП?</div>
+              </div>
+            </div>
+            <!-- Scrollable page content-->
+            <div class="page-content">
+              <div class="list-block media-list">
+                <ul>
+                  <li><a href="tel:+74232488428" class="item-link external item-content">
+                      <div class="item-media"><img src="img/i-logo.png" width="44"></div>
+                      <div class="item-inner">
+                        <div class="item-title-row">
+                          <div class="item-title">Вызвать аварийного комиссара</div>
+                        </div>
+                        <div class="item-subtitle">Позвонить в городскую службу аварийных комисаров</div>
+                      </div></a></li>
+                </ul>
+              </div>
+              <div class="content-block-title">Проверка полиса ОСАГО</div>
+              <div class="list-block">
+                <ul> 
+                  <li><a href="#" class="item-link smart-select">
+                      <select name="serial">
+                        <option value="XXX" selected>XXX</option>
+                        <option value="CCC">CCC</option>
+                        <option value="EEE">EEE</option>
+                        <option value="BBB">BBB</option>
+                      </select>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">Серия</div>
+                        </div>
+                      </div></a></li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner"> 
+                        <div class="item-title label">Номер</div>
+                        <div class="item-input">
+                          <input type="text" placeholder="номер">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><img src="http://dkbm-web.autoins.ru/dkbm-web-1.0/simpleCaptcha.png"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner"> 
+                        <div class="item-title label">Код с картинки</div>
+                        <div class="item-input">
+                          <input type="text" placeholder="код">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="content-block"><a href="#" id="check-polis" class="button button-raised">Проверить</a></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>

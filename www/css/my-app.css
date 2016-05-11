@@ -1,0 +1,24 @@
+i.icon.icon-road-accident {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/i-road-accident.png");
+  border-radius: 3px;
+}
+i.icon.icon-osago {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/i-osago.png");
+  border-radius: 3px;
+}
+i.icon.icon-mulct {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/i-mulct.png");
+  border-radius: 3px;
+}
+i.icon.icon-logo {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/i-logo.png");
+  border-radius: 3px;
+}
