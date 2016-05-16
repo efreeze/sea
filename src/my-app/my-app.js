@@ -1,8 +1,14 @@
 // Initialize your app
 var myApp = new Framework7({material: true});
 
+
 // Export selectors engine
 var $$ = Dom7;
+
+myApp.loginScreen('.login-screen');
+setTimeout(function() {
+    myApp.closeModal('.login-screen.modal-in');
+}, 5000);
 
 // Add view
 var mainView = myApp.addView('.view-main', {

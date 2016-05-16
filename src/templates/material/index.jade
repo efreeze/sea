@@ -14,6 +14,49 @@ html
     body
         // Status bar overlay for fullscreen mode
         .statusbar-overlay
+        
+        .login-screen
+            //- a(href="index.html").button.close-login-screen
+            //-     .item-content
+            //-         .item-inner
+            //-             .item-title
+            //-                 i.icon.icon-road-accident
+            //-                 Попали в ДТП?
+            //- a(href="osago.html").button.close-login-screen
+            //-     .item-content
+            //-         .item-inner
+            //-             .item-title
+            //-                 i.icon.icon-osago
+            //-                 Осаго
+            //- a(href="mulct.html").button.close-login-screen
+            //-     .item-content
+            //-         .item-inner
+            //-             .item-title
+            //-                 i.icon.icon-mulct
+            //-                 КБМ и Штрафы
+            .content-block
+                img(src="img/progress.gif",width=70)
+            .list-block
+                .item-content
+                    .item-media
+                        img(src="img/i-road-accident.png",width=32)
+                    .item-inner
+                        .item-title
+                            Попали в ДТП?
+                .item-content
+                    .item-media
+                        img(src="img/i-osago.png",width=32)
+                    .item-inner
+                        .item-title
+                            Осаго
+                .item-content
+                    .item-media
+                        img(src="img/i-mulct.png",width=32)
+                    .item-inner
+                        .item-title
+                            КБМ и Штрафы
+            .content-block.copy
+                &copy; 2016 ООО "Сервисная компания «Защита» 
 
         // Panels overlay
         .panel-overlay
@@ -24,6 +67,26 @@ html
                     .page(data-page='panel-left')
                         .page-content
                             .content-block
+                                a(href="index.html").button.button-raised.close-panel
+                                    .item-content
+                                        .item-inner
+                                            .item-title
+                                                i.icon.icon-road-accident
+                                                Попали в ДТП?
+                                a(href="osago.html").button.button-raised.close-panel
+                                    .item-content
+                                        .item-inner
+                                            .item-title
+                                                i.icon.icon-osago
+                                                Осаго
+                                a(href="mulct.html").button.button-raised.close-panel
+                                    .item-content
+                                        .item-inner
+                                            .item-title
+                                                i.icon.icon-mulct
+                                                КБМ и Штрафы
+                                                    
+                            .content-block
                                 .list-block
                                     ul
                                         li
@@ -33,7 +96,7 @@ html
                                                         i.icon.icon-road-accident
                                                     .item-inner
                                                         .item-title
-                                                            Попали в ДТП?
+                                                            Осаго
                                         li
                                             a(href="osago.html").item-link.close-panel
                                                 .item-content

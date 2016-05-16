@@ -1,8 +1,8 @@
 // We don't need full layout here, because this page will be parsed with Ajax
 // Top Navbar
-.pages.navbar-through.toolbar-through
+.pages.navbar-fixed
     // Page, data-page contains page name
-    .page(data-page="services")
+    .page(data-page="osago")
         .navbar
             .navbar-inner
                 // We have home navbar without left link
@@ -13,13 +13,107 @@
                 .center.sliding ОСАГО
         // Scrollable page content
         .page-content
-            .content-block
-                .content-block-inner
-                    p Here is Services page!
-                    p Go 
-                        a(href="#").back back
-                        |    or go to 
-                        a(href="about.html") About
-                        |    page.
-                    p Mauris posuere sit amet metus id venenatis. Ut ante dolor, tempor nec commodo rutrum, varius at sem. Nullam ac nisi non neque ornare pretium. Nulla mauris mauris, consequat et elementum sit amet, egestas sed orci. In hac habitasse platea dictumst.
-                    p Fusce eros lectus, accumsan eget mi vel, iaculis tincidunt felis. Nulla tincidunt pharetra sagittis. Fusce in felis eros. Nulla sit amet aliquam lorem, et gravida ipsum. Mauris consectetur nisl non sollicitudin tristique. Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.
+            .list-block.media-list
+                ul
+                    li
+                        a(href="tel:+74232488428").item-link.external.item-content
+                            .item-media
+                                img(src="img/i-logo.png", width="44")
+                            .item-inner
+                                .item-title-row
+                                    .item-title
+                                        Вызвать агента
+                                .item-subtitle
+                                    Наш агент приедет к вам
+            .list-block.media-list
+                ul
+                    li
+                        a(href="my.html").item-link.item-content
+                            .item-media
+                                img(src="img/i-osago.png", width="44")
+                            .item-inner
+                                .item-title-row
+                                    .item-title
+                                        Мои полисы
+                                .item-subtitle
+                                    До окончания полиса - 55 дней
+            
+            .content-block-title Проверка КБМ
+            .list-block
+                ul 
+                    li
+                        a(href="#").item-link.smart-select
+                            select(name="serial")
+                                option(value="XXX", selected=true) XXX
+                                option(value="CCC") CCC
+                                option(value="EEE") EEE
+                                option(value="BBB") BBB
+                            .item-content
+                                //- .item-media
+                                //-     i.icon.icon-form-name
+                                .item-inner
+                                    .item-title Серия
+                    li
+                        .item-content
+                            //- .item-media
+                            //-     i.icon.icon-form-name
+                            .item-inner 
+                                .item-title.label Фамилия
+                                .item-input
+                                    input(type="text", placeholder="фамилия")
+                    li
+                        .item-content
+                            //- .item-media
+                            //-     i.icon.icon-form-name
+                            .item-inner 
+                                .item-title.label Имя
+                                .item-input
+                                    input(type="text", placeholder="имя")
+                    li
+                        .item-content
+                            //- .item-media
+                            //-     i.icon.icon-form-name
+                            .item-inner 
+                                .item-title.label Отчество
+                                .item-input
+                                    input(type="text", placeholder="отчество")
+                    li
+                        .item-content
+                            //- .item-media
+                            //-     i.icon.icon-form-name
+                            .item-inner 
+                                .item-title.label Дата рождения
+                                .item-input
+                                    input(type="date", placeholder="дата рождения")
+                    li
+                        .item-content
+                            //- .item-media
+                            //-     i.icon.icon-form-name
+                            .item-inner 
+                                .item-title.label Серия В/У
+                                .item-input
+                                    input(type="text", placeholder="дата рождения")
+                    li
+                        .item-content
+                            //- .item-media
+                            //-     i.icon.icon-form-name
+                            .item-inner 
+                                .item-title.label Номер В/У
+                                .item-input
+                                    input(type="text", placeholder="дата рождения")
+                    li
+                        .item-content
+                            .item-media
+                                img(src="http://dkbm-web.autoins.ru/dkbm-web-1.0/simpleCaptcha.png")
+                    li
+                        .item-content
+                            //- .item-media
+                            //-     i.icon.icon-form-name
+                            .item-inner 
+                                .item-title.label Код с картинки
+                                .item-input
+                                    input(type="text", placeholder="код")
+                    li
+                        .content-block
+                            a(href="#").button.button-raised#check-polis
+                                Проверить

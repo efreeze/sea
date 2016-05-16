@@ -1,3 +1,6 @@
+.page {
+    background: url("../img/bg.png") !important;
+}
 i.icon.icon-road-accident {
   width: 24px;
   height: 24px;
@@ -21,4 +24,20 @@ i.icon.icon-logo {
   height: 24px;
   background-image: url("../img/i-logo.png");
   border-radius: 3px;
+}
+.navbar, .toolbar, .subnavbar {
+    background: #e3002b;
+}
+.button, a {
+    color: #e3002b;
+}
+.login-screen {
+    background: url("../img/splash.png") no-repeat;
+    padding-top: 260px;
+    transition-duration: 0ms !important;
+    text-align: center;
+    color: white;
+}
+.copy {
+    color: #777;
 }
